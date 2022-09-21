@@ -2,3 +2,7 @@ image{
     width: 150px;
     height: 150px;
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
