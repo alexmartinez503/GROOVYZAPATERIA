@@ -6,3 +6,8 @@ image{
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+.w-100{
+    width: 200px;
+    height: 300px;
+}
