@@ -5,7 +5,12 @@
 @section('content')
     <div class="py-3 mb-4 shadow-sm  bg-danger  border-top">
         <div class="container">
-            <h6 class="mb-0">Colección / {{$products->category->name}} / {{$products->name}}</h6>
+            <h6 class="mb-0">
+                <a href="{{url('category')}}"> Colección</a>/
+                <a href="{{url('category/'.$products->category->slug)}}"> {{$products->category->name}}</a>/
+                <a href="{{url('category/'.$products->category->slug.'/'.$products->slug)}}">  {{$products->name}}</a>
+                 
+                </h6>
         </div>
     </div>
 
@@ -68,64 +73,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $('.addToCardBtn').click(function(e){
-            e.preventDefault();
-            var product_id = $(this).closest('.product_data').find('.prod_id').val();
-            var product_qty = $(this).closest('.product_data').find('.qty-input').val();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type:"POST",
-                url: "/add-to-cart",
-                data:{
-                    'product_id': product_id,
-                    'product_qty':product_qty,
-                },
-                success: function (response){
-                    swal(response.status);
-
-                }
-            });
-
-
-
-        });
-
-        $(document).ready(function(){
-            $('.increment-btn').click(function(e){
-                e.preventDefault();
-
-                var inc_value = $('.qty-input').val();
-                var value = parseInt(inc_value, 10);
-                value = isNaN(value) ? 0 : value;
-                if(value < 10)
-                {
-                    value++;
-                    $('.qty-input').val(value)
-                }
-            });
-
-            $('.decrement-btn').click(function(e){
-                e.preventDefault();
-
-                var dec_value = $('.qty-input').val();
-                var value = parseInt(dec_value, 10);
-                value = isNaN(value) ? 0 : value;
-                if(value > 1)
-                {
-                    value--;
-                    $('.qty-input').val(value)
-                }
-            });
-        })
-    </script>
 @endsection

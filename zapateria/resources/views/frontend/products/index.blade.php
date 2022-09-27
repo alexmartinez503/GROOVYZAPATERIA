@@ -8,7 +8,10 @@
 
     <div class="py-3 mb-4  shadow-sm  bg-danger  border-top">
         <div class="container">
-            <h6 class="mb-0">Colección / {{$category->name}} </h6>
+            <h6 class="mb-0">
+                <a href="{{url('category')}}"> Colección</a>/
+                <a href="{{url('category/'.$category->slug)}}"> {{$category->name}}</a> 
+           </h6>
         </div>
     </div>
 <div class="py-5">

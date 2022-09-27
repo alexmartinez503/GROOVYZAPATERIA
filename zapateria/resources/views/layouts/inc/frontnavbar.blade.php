@@ -12,6 +12,10 @@
         <li class="nav-item">
           <a class="nav-link" href="{{url('category')}}">Categorias</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('cart')}}"> Mi Carrito</a>
+        </li>
+
           <li>
                
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
