@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Ui\Presets\React;
 use LDAP\Result;
 
 class CartController extends Controller
@@ -50,6 +51,24 @@ class CartController extends Controller
         return view('frontend.cart', compact('cartitems'));
     }
 
+    public function updateCart(Request $request)
+    {
+        $prod_id = $request->input('prod_id');
+        $product_qty = $request->input('prod_qty');
+
+        if(Auth::check()){
+            if(Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists()){
+
+                $cart = Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
+                $cart -> prod_qty = $product_qty;
+                $cart->update();
+
+                return response()->json(['status'=> "Cantidad actualizada"]);
+            }
+
+        }
+    }
+
     public function deleteProduct(Request $request)
     {
         if(Auth::check())
@@ -71,4 +90,5 @@ class CartController extends Controller
 
 
     }
+
 }
