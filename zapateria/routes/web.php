@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Frontend\FrontController;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\checkoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::post('update-cart',[CartController::class, 'updateCart']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewCart']);
+    Route::get('checkout', [checkoutController::class,'index']);
 });
 
 

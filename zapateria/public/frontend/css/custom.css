@@ -14,3 +14,17 @@ body{
 .slider{
     height: 500px;
 }
+
+.checkout-form label{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkout-form input{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+}
+.btnPedido{
+    height: auto;
+}
