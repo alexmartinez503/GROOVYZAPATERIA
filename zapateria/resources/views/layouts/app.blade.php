@@ -13,6 +13,16 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
+    <link  href="{{asset('frontend/css/linearicons.css')}}" rel="stylesheet">
+    <link  href="{{asset('frontend/css/owl.carousel.css')}} " rel="stylesheet">
+    <link  href="{{asset('frontend/css/themify-icons.css')}} " rel="stylesheet">
+    <link  href="{{asset('frontend/css/font-awesome.min.css')}} " rel="stylesheet">
+    <link  href="{{asset('frontend/css/nice-select.css')}} " rel="stylesheet">
+    <link  href="{{asset('frontend/css/nouislider.min.css')}} " rel="stylesheet">
+    <link  href="{{asset('frontend/css/main.css')}}" rel="stylesheet">
+    <link  href="{{asset('frontend/css/bootstrap.css')}} " rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -72,9 +82,30 @@
             </div>
         </nav>
 
+
+
+
+    <script src="{{asset('frontend/js/vendor/jquery-2.2.4.min.js ')}} "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="{{asset('frontend/js/vendor/bootstrap.min.js ')}} "></script>
+    <script src="{{asset('frontend/js/jquery.ajaxchimp.min.js ')}} "></script>
+    <script src="{{asset('frontend/js/jquery.nice-select.min.js ')}} "></script>
+    <script src="{{asset('frontend/js/jquery.sticky.js ')}} "></script>
+    <script src="{{asset('frontend/js/nouislider.min.js ')}} "></script>
+    <script src="{{asset('frontend/js/countdown.js')}} "></script>
+    <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}} "></script>
+    <script src="{{asset('frontend/js/owl.carousel.min.js')}} "></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="{{asset('frontend/js/gmaps.min.js')}} "></script>
+    <script src="{{asset('frontend/js/main.js')}} "></script>
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+
+
 </body>
 </html>

@@ -1,51 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="{{url('/')}}">Groovy</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('category')}}">Categorias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('cart')}}"> Mi Carrito</a>
-        </li>
+<div class="main_menu">
+  <nav class="navbar navbar-expand-lg navbar-light main_box">
+      <div class="container">
+          <!-- Logo/Marca -->
+          <a class="navbar-brand logo_h"  href="{{url('/')}}"><span style="font-weight: bold; font-size:30px;">Groovy</span><span style="font-weight: bold; font-size:55px; color:#10ABC6;">.</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <!-- Menú -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item active"><a class="nav-link"  href="{{url('/')}}">Inicio</a></li>
+                  <li class="nav-item "><a href="{{url('category')}}" class="nav-link ">Categorias</a></li>
+                  
+                  <li class="nav-item"><a class="nav-link" href="{{url('cart')}}">Carrito</a></li>
 
-          <li>
-               
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <!-- Left Side Of Navbar -->
-                  <ul class="navbar-nav me-auto">
-
-                  </ul>
-
-                  <!-- Right Side Of Navbar -->
-                  <ul class="navbar-nav ms-auto">
-                      <!-- Authentication Links -->
-                      @guest
-                          @if (Route::has('login'))
-                              <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                              </li>
-                          @endif
-
-                          @if (Route::has('register'))
-                              <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                              </li>
-                          @endif
+                  <li class="nav-item d-none d-lg-flex ms-1">
+                  @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary py-2 px-2" style="color: white; font-weight: 300; border-radius: 40px; width: 135px;" href="{{ route('login') }}"  >{{ __('Iniciar Secion') }}</a>
+                        </li>
+                    @endif
+                
                       @else
                       <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle btn btn-primary py-2 px-2" style="color: white; font-weight: 300; border-radius: 40px; width: 135px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               {{ Auth::user()->name }}
                           </a>
                           
@@ -67,10 +48,12 @@
 
                         </li>
                       @endguest
-                  </ul>
-                </div>
-          </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+                  </li>
+                  
+              </ul>
+              
+
+          </div>
+      </div>
+  </nav>
+</div>

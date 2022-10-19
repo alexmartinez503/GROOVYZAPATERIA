@@ -5,7 +5,7 @@ Mi carrito
 @endsection 
 
 @section('content')
-    <div class="py-3 mb-4 shadow-sm  bg-danger  border-top">
+    <div class="py-3 mb-4 shadow-sm  bg-danger  border-top nav-1">
         <div class="container">
             <h6 class="mb-0">
                 <a href="{{url('/')}}"> Inicio</a>/
@@ -61,6 +61,10 @@ Mi carrito
         </div>
     </div>
 
-    
+    <style>
+        .nav-1{
+            margin-top: 140px;
+        }
+    </style>
    
 @endsection 

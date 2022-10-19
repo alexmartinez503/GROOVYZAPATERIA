@@ -1,26 +1,42 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{asset('assets/images/1.jpg')}}" width="auto" height="450px"  class="d-block w-100 slider" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('assets/images/2.1.jpg')}}" width="auto" height="450px"  class="d-block w-100 slider" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('assets/images/3.jpg')}}" width="auto" height="450px"  class="d-block w-100 slider" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+@extends('layouts.frontend')
+<!-- Inicio del banner -->
+ <section class="banner-area">
+            <div class="container">
+                <div class="row fullscreen align-items-center justify-content-start">
+                    <div class="col-lg-12">
+                        <div class="active-banner-slider owl-carousel">
+                            <!-- Banner 1 -->
+                            <div class="row single-slide align-items-center d-flex">
+                                <div class="col-lg-5 col-md-6">
+                                    <div class="banner-content">
+                                        <h1>Nuevos  <br>Estilos Solo en Groovy </h1>
+                                        <p style="text-align: justify;"></p>                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="banner-img">
+                                        <img class="img-fluid" src="{{asset('assets/img/banner/banner-img.png')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Banner 2 -->
+                            <div class="row single-slide align-items-center d-flex">
+                                <div class="col-lg-5 col-md-6">
+                                    <div class="banner-content">
+                                        <h1>Prueba la nueva colección</h1>
+                                        <p style="text-align: justify;">Ven y conoce tolo lo nuevo que tenemos para ti calzado de la mejor calidad solo disponible aqui no te pierdas de toda la variedad que tenemos para ofrecerte.</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="banner-img">
+                                        <img class="img-fluid" src="{{asset('assets/img/banner/banner-img.png')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final del banner -->

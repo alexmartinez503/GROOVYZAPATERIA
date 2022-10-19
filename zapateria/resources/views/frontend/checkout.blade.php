@@ -5,8 +5,8 @@
 @endsection 
 
 @section('content')
-    <div class="container mt-5">
-        <div class="row">
+    <div class="container  mt-5">
+        <div class="row c1">
             <div class="col-md-7">
                 <div class="card">
                     <div class="card-body">
@@ -89,4 +89,9 @@
         </div>
     </div>
 
+    <style>
+        .c1{
+            margin-top: 140px;
+        }
+    </style>
 @endsection
