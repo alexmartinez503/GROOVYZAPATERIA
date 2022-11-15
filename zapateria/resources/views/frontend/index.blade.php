@@ -12,9 +12,9 @@ Bienvenido a Grooby Zapateria
     <section class="features-area section_gap">
         <div class="container">
             <div class="row features-inner">
-                <hr>
+                
                 <h2>Productos futuros</h2>
-                <hr><hr>
+                <br>
                 <!-- C#1 -->
                 <div class=" owl-carousel featured-carousel owl-theme">
                     @foreach($feature_products as $prod)
@@ -35,15 +35,15 @@ Bienvenido a Grooby Zapateria
     <section class="features-area section_gap py-1">
         <div class="container">
             <div class="row features-inner">
-                <hr>
+                
                 <h2>Categorias en Tendencia</h2>
-                <hr><hr>
+                <br>
                 <div class="owl-carousel featured-carousel owl-theme">  
                     @foreach($trending_category as $tcategory)
                         <div class="single-features">
                             <div class="f-icon">
-                                <a href="{{url('view-category/'.$tcategory->slug)}}">
-                                <img src="{{asset('assets/uploads/category/'.$tcategory->image)}}"class="w-100" width="200px" height="300px"  alt="imagen del producto">
+                            <a href="{{url('view-category/'.$tcategory->slug)}}"> 
+                                <img src="{{asset('assets/uploads/category/'.$tcategory->image)}}"class="w-100" width="200px" height="300px"  alt="imagen del producto"> </a>
                             </div>
                                 <h5>{{$tcategory->name}}</h5>
                                 <p>

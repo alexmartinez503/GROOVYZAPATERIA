@@ -20,7 +20,7 @@
                   @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary py-2 px-2" style="color: white; font-weight: 300; border-radius: 40px; width: 135px;" href="{{ route('login') }}"  >{{ __('Iniciar Secion') }}</a>
+                            <a class="nav-link btn btn-primary py-2 px-2" style="color: white; font-weight: 300; border-radius: 40px; width: 135px;" href="{{ route('login') }}"  >{{ __('Iniciar Sesion') }}</a>
                         </li>
                     @endif
                 
