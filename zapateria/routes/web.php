@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\FrontController;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\checkoutController;
+use App\Http\Controllers\Frontend\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,11 @@ Route::post('update-cart',[CartController::class, 'updateCart']);
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewCart']);
     Route::get('checkout', [checkoutController::class,'index']);
+    Route::post('place-order', [checkoutController::class, 'placeOrder']);
+
+    Route::get('my-orders',[UserController::class, 'index']);
+    Route::get('view-order/{id}',[UserController::class, 'view']);
+
 });
 
 

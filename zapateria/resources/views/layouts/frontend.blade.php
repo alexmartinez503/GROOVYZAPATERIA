@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<header class="header_area sticky-header">
+<header class="header_area sticky-header ">
         @include('layouts.inc.frontnavbar')
     
     </header>
@@ -61,7 +61,7 @@
 
 
 
-    <div class="content">
+    <div class="content mt-5">
         @yield('content')
     </div> 
 
