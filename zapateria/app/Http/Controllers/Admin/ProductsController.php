@@ -47,7 +47,7 @@ class ProductsController extends Controller
         $products->meta_keywords = $request->input('meta_keywords');
         $products->meta_description = $request->input('meta_description');
         $products->save();
-        return redirect('products')->with('estado','producto agregado con exito');
+        return redirect('products')->with('status','producto agregado con exito');
         
     }
 
@@ -87,7 +87,7 @@ class ProductsController extends Controller
         $products->meta_keywords = $request->input('meta_keywords');
         $products->meta_description = $request->input('meta_description');
         $products->update();
-        return redirect('products')->with('estado','producto actualizado con exito');
+        return redirect('products')->with('status','producto actualizado con exito');
     }
 
     public function destroy($id){
@@ -99,7 +99,7 @@ class ProductsController extends Controller
         }
 
         $products->delete();
-        return redirect('products')->with('estado','producto eliminado con exito');
+        return redirect('products')->with('status','producto eliminado con exito');
 
     }
 }

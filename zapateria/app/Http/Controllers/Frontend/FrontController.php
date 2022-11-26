@@ -30,7 +30,7 @@ class FrontController extends Controller
             return view('frontend.products.index', compact('category','products'));
 
         }else{
-            return redirect('/')->with('estado',"Slug no existe");
+            return redirect('/')->with('status',"Slug no existe");
         }
         
         
@@ -46,11 +46,11 @@ class FrontController extends Controller
                 return view('frontend.products.view', compact('products'));
             }
             else{
-                return redirect('/')->with('esdado',"el enlace no esta funcionando");
+                return redirect('/')->with('status',"el enlace no esta funcionando");
             }
         } 
         else{
-            return redirect('/')->with('esdado',"no se encontro la categoria");
+            return redirect('/')->with('status',"no se encontro la categoria");
         }
 
     }
