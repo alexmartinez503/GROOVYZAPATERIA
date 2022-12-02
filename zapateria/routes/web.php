@@ -13,6 +13,7 @@ use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\checkoutController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +37,18 @@ Route::get('category/{cate_slug}/{prod_slug}',[FrontController::class,'productVi
 
 
 Auth::routes();
+
+Route::get('load-card-data', [CartController::class,'cartcount']);
+Route::get('load-wishlist-count', [WishlistController::class,'wishlistcount']);
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/add-to-cart',[CartController::class, 'addProduct']);
 Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
 Route::post('update-cart',[CartController::class, 'updateCart']);
+
+Route::post('add-to-wishlist', [WishlistController::class,'add']);
+Route::post('delete-wishlist-item', [WishlistController::class,'deleteitem']);
+
 
 
 Route::middleware(['auth'])->group(function(){
@@ -49,6 +58,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('my-orders',[UserController::class, 'index']);
     Route::get('view-order/{id}',[UserController::class, 'view']);
+
+    Route::get('Whislist', [WishlistController::class,'index']);
+
 
 });
 

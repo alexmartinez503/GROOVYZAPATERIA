@@ -14,7 +14,13 @@
                   <li class="nav-item active"><a class="nav-link"  href="{{url('/')}}">Inicio</a></li>
                   <li class="nav-item "><a href="{{url('category')}}" class="nav-link ">Categorias</a></li>
                   
-                  <li class="nav-item"><a class="nav-link" href="{{url('cart')}}">Carrito</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{url('cart')}}">Carrito
+                    <span class="badge badge-pill bg-primary cart-count">0</span>
+                  </a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{url('Whislist')}}">Lista de Deseos
+                  <span class="badge badge-pill bg-success wishlist-count">0</span>
+                  </a></li>
+
 
                   <li class="nav-item d-none d-lg-flex ms-1">
                   @guest
@@ -35,7 +41,7 @@
                               <li>
                                   <a class="dropdown-item" href="{{url('my-orders')}}">Mis ordenes</a>
                               </li>
-
+                           
                               <li>
                                   <a class="dropdown-item" href="#">perfil</a>
                               </li>

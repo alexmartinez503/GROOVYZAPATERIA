@@ -2,6 +2,34 @@
 
 $(document).ready(function(){
 
+    loadcard();
+    loadwishlist();
+
+    function loadcard()
+    {
+        $.ajax({
+            method:"GET",
+            url: "/load-card-data",
+            success: function (response){
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+            }
+        });
+    }
+
+
+    function loadwishlist()
+    {
+        $.ajax({
+            method:"GET",
+            url: "/load-wishlist-count",
+            success: function (response){
+                $('.wishlist-count').html('');
+                $('.wishlist-count').html(response.count);
+            }
+        });
+    }
+
     $('.addToCardBtn').click(function(e){
         e.preventDefault();
         var product_id = $(this).closest('.product_data').find('.prod_id').val();
@@ -22,9 +50,28 @@ $(document).ready(function(){
             },
             success: function (response){
                 swal(response.status);
+                loadcard();
     
             }
         });
+    });
+
+    $('.addToWishlist').click(function(e){
+        e.preventDefault();
+        var product_id = $(this).closest('.product_data').find('.prod_id').val();
+
+        $.ajax({
+            type:"POST",
+            url: "/add-to-wishlist",
+            data:{
+                'product_id': product_id, 
+            },
+            success: function (response){
+                swal(response.status);
+                loadwishlist();
+            }
+        });
+
     });
 
     $('.increment-btn').click(function(e){
@@ -68,6 +115,25 @@ $(document).ready(function(){
         $.ajax({
             type:"POST",
             url: "delete-cart-item",
+            data:{
+                'prod_id': prod_id,
+            },
+            success: function (response){
+                swal("",response.status,"success");
+                window.location.reload();
+    
+            }
+        });
+    });
+
+    $('.remove-wishlist-item').click(function(e){
+        e.preventDefault();
+        
+        var prod_id =  $(this).closest('.product_data').find('.prod_id').val();
+
+        $.ajax({
+            type:"POST",
+            url: "delete-wishlist-item",
             data:{
                 'prod_id': prod_id,
             },
