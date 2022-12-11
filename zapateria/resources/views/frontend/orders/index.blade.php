@@ -28,6 +28,7 @@ Mis Ordenes
                                 @foreach($orders as $item)
                                 
                                     <tr>
+                                        
                                         <td>{{date('d-m-y', strtotime($item->created_at))}}</td>
                                         <td>{{$item->tracking_no}}</td>
                                         <td>{{$item->total_price}}</td>

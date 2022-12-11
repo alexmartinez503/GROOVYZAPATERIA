@@ -77,8 +77,43 @@ class checkoutController extends Controller
 
         $cartitems = Cart::where('user_id', Auth::id())->get();
         Cart::destroy($cartitems);
-
+        
+        if($request->input('payment_mode')== "Paid by Paypal")
+        {
+            return response()->json(['status'=>"Orden realizada con exito"]);
+        }
         return redirect('/')->with('status', "orden realizada con exito");
     }
 
+    public function razorpaycheck(Request $request)
+    {
+        $cartitems = Cart::where('user_id', Auth::id())->get();
+        $total_price = 0;
+        foreach($cartitems as $item)
+        {
+            $total_price+= $item->products->selling_price * $item->prod_qty;
+        }
+
+            $firstname= $request->input('firstname');
+            $lastname = $request->input('lastname');
+            $email= $request->input('email') ;
+            $phone = $request->input('phone');
+            $address = $request->input('address');
+            $city= $request->input('city');
+            $state = $request->input('state');
+            $pincode= $request->input('pincode');
+
+            return response()->json([
+                'firstname'=> $firstname,
+                'lastname' => $lastname,
+                'email'  => $email,
+                'phone'  => $phone,
+                'address'  => $address,
+                'city' => $city,
+                'state'  => $state,
+                'pincode' => $pincode,
+                'total_price' => $total_price,
+            ]);
+
+    }
 }

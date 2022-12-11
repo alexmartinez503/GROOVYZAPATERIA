@@ -55,10 +55,11 @@ Mis Ordenes
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @php $total = 0 @endphp 
                                             @foreach($orders->orderitems as $item)
                                             
                                                 <tr>
-                            
+                                                @php   $total +=($item->products->selling_price * $item->qty) @endphp         
                                                     <td>{{$item->products->name}}</td>
                                                     <td>{{$item->qty}}</td>
                                                     <td>{{$item->price}}</td>
@@ -76,7 +77,9 @@ Mis Ordenes
 
                                     </table>
 
-                                    <h4 class="px-2">Total a Pagar <span class="float-end"></span> </h4>
+                                    <h4 class="px-2">Total a Pagar <span class="float-end">${{$total}}</span> </h4>
+                                    <h6 class="px-2">Metodo de pago: {{$orders->payment_mode}} </h6>
+
                             </div>
                         </div>
                        

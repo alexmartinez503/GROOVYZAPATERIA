@@ -3,6 +3,46 @@
 @section('title', $products->name)
 
 @section('content')
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <form action="{{url('/add-rating')}}" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{$products->id}}">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Califica {{$products->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <div class="rating-css">
+                        <div class="star-icon">
+                            <input type="radio" value="1" name="product_rating" checked id="rating1">
+                            <label for="rating1" class="fa fa-star"></label>
+                            <input type="radio" value="2" name="product_rating" id="rating2">
+                            <label for="rating2" class="fa fa-star"></label>
+                            <input type="radio" value="3" name="product_rating" id="rating3">
+                            <label for="rating3" class="fa fa-star"></label>
+                            <input type="radio" value="4" name="product_rating" id="rating4">
+                            <label for="rating4" class="fa fa-star"></label>
+                            <input type="radio" value="5" name="product_rating" id="rating5">
+                            <label for="rating5" class="fa fa-star"></label>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
     <div class="py-3 mb-4 shadow-sm  bg-danger  border-top nav-1">
         <div class="container">
             <h6 class="mb-0">
@@ -70,6 +110,12 @@
                 <div class="col-md-12">
                     <h3>Descripcion</h3>
                     <p class="mt-3">{!!$products->description!!}</p>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Califica este producto
+                    </button>
+                    
+
                 </div>
             </div>
         </div>

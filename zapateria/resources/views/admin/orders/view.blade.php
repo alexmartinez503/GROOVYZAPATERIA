@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.admin')
 
 @section('title')
 Mis Ordenes
@@ -6,7 +6,7 @@ Mis Ordenes
 
 @section('content')
 
-    <div class="container mt-5">
+    <div class="container mt-1">
         <div class="row details1 ">
             <div class="col-md-12">
                 <div class="card">
@@ -55,10 +55,11 @@ Mis Ordenes
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @php $total = 0 @endphp 
                                             @foreach($orders->orderitems as $item)
                                             
                                                 <tr>
-                            
+                                                    @php   $total +=($item->products->selling_price * $item->qty) @endphp  
                                                     <td>{{$item->products->name}}</td>
                                                     <td>{{$item->qty}}</td>
                                                     <td>{{$item->price}}</td>
@@ -76,7 +77,7 @@ Mis Ordenes
 
                                     </table>
 
-                                    <h4 class="px-2">Total a Pagar <span class="float-end"></span> </h4>
+                                    <h4 class="px-2">Total a Pagar <span class="float-end">${{$total}}</span> </h4>
 
                                     <div class="mt-5 px-2">
                                     <label for="">Estado del pedido</label>
@@ -99,9 +100,5 @@ Mis Ordenes
         </div>
     </div>
 
-    <style>
-        .details1 {
-            margin-top: 140px;
-        }
-    </style>
+
 @endsection 

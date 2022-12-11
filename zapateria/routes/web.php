@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\FrontController;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\checkoutController;
+use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\WishlistController;
 
@@ -59,7 +60,11 @@ Route::middleware(['auth'])->group(function(){
     Route::get('my-orders',[UserController::class, 'index']);
     Route::get('view-order/{id}',[UserController::class, 'view']);
 
+    Route::get('add-rating',[RatingController::class,'add']);
+
     Route::get('Whislist', [WishlistController::class,'index']);
+
+    Route::post('proceed-to-pay', [checkoutController::class, 'razorpaycheck']);
 
 
 });

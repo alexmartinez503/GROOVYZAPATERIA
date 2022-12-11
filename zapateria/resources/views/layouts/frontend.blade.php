@@ -72,6 +72,7 @@
     <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('frontend/js/custom.js')}}"></script>
+    <script src="{{asset('frontend/js/checkout.js')}}"></script>
 
 
     <script src="{{asset('frontend/js/vendor/jquery-2.2.4.min.js ')}} "></script>
